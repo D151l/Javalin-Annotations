@@ -1,5 +1,11 @@
-repositories {
+plugins {
+    `maven-publish`
 }
 
-dependencies {
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            from(components["java"])
+        }
+    }
 }
