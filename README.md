@@ -8,7 +8,7 @@
 
 build.gradle.kts:
 
-```sh
+```groovy
 repositories {
     maven { url = uri("https://jitpack.io") }
 }
@@ -21,7 +21,7 @@ dependencies {
 pom.xml:
 
 
-```sh
+```xml
     <repositories>
         <repository>
             <id>jitpack.io</id>
