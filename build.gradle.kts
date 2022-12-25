@@ -2,18 +2,26 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.7.21"
-    application
 }
 
-group = "org.example"
-version = "1.0-SNAPSHOT"
-
-repositories {
-    mavenCentral()
+allprojects {
+    group = "me.d151l.javalin.annotations"
+    version = "1.0.0-SNAPSHOT"
 }
 
-dependencies {
-    testImplementation(kotlin("test"))
+subprojects {
+    apply {
+        plugin("java")
+        plugin("kotlin")
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compileOnly("io.javalin:javalin:5.2.0")
+    }
 }
 
 tasks.test {
@@ -22,8 +30,4 @@ tasks.test {
 
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
-}
-
-application {
-    mainClass.set("MainKt")
 }
