@@ -1,7 +1,7 @@
 ![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)
 [![forthebadge](https://forthebadge.com/images/badges/not-a-bug-a-feature.svg)](https://forthebadge.com)
 
-# A [Javalin](https://twitter.com/EinsLucaaa) Annotation library.
+# A [Javalin](https://javalin.io) Annotation library.
 > Use Javalin more easily with annotations in your project.
 
 ## Dependencies:
