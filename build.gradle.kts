@@ -13,6 +13,7 @@ subprojects {
     apply {
         plugin("java")
         plugin("kotlin")
+        plugin("maven-publish")
     }
 
     repositories {
