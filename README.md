@@ -21,7 +21,7 @@ dependencies {
 pom.xml:
 
 
-```sh
+```xml
     <repositories>
         <repository>
             <id>jitpack.io</id>
