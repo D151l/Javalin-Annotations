@@ -20,7 +20,7 @@ subprojects {
     }
 
     dependencies {
-        compileOnly("io.javalin:javalin:5.2.0")
+        implementation("io.javalin:javalin:5.2.0")
     }
 }
 
