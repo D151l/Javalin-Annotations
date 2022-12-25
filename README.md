@@ -8,7 +8,7 @@
 
 build.gradle.kts:
 
-```sh
+```groovy
 repositories {
     maven { url = uri("https://jitpack.io") }
 }
