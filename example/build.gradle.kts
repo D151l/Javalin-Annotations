@@ -4,10 +4,11 @@ plugins {
 }
 
 repositories {
+    maven { url = uri("https://jitpack.io") }
 }
 
 dependencies {
-    implementation(project(":core"))
+    implementation("com.github.D151l:Javalin-Annotations:868f9de2e3")
     implementation("org.slf4j:slf4j-simple:2.0.3")
 }
 
