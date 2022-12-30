@@ -4,6 +4,7 @@ import io.javalin.Javalin
 import io.javalin.http.Context
 import me.d151l.javalin.annotations.core.annotation.AnnotationHandler
 import me.d151l.javalin.annotations.core.controller.Controller
+import me.d151l.javalin.annotations.core.request.RequestType
 
 /**
  * @created 25/12/2022 - 11:46
@@ -19,10 +20,17 @@ class JavalinAnnotations(
     fun register(controller: Controller) {
         val consumerMap = this.annotationHandler.getAnnotationMethods(controller)
 
-        consumerMap.forEach { (path, consumer) ->
-            this.app[path, {context: Context ->
-                consumer.accept(context)
-            }]
+        consumerMap.forEach { (pair, consumer) ->
+            if (pair.second == RequestType.GET) {
+                this.app[pair.first, { context: Context ->
+                    consumer.accept(context)
+                }]
+            }
+            if (pair.second == RequestType.POST) {
+                this.app.post(pair.first) {
+                    consumer.accept(it)
+                }
+            }
         }
     }
 }
