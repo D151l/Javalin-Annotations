@@ -31,6 +31,26 @@ class JavalinAnnotations(
                     consumer.accept(it)
                 }
             }
+            if (pair.second == RequestType.PUT) {
+                this.app.put(pair.first) {
+                    consumer.accept(it)
+                }
+            }
+            if (pair.second == RequestType.DELETE) {
+                this.app.delete(pair.first) {
+                    consumer.accept(it)
+                }
+            }
+            if (pair.second == RequestType.PATCH) {
+                this.app.patch(pair.first) {
+                    consumer.accept(it)
+                }
+            }
+            if (pair.second == RequestType.GET) {
+                this.app.get(pair.first) {
+                    consumer.accept(it)
+                }
+            }
         }
     }
 }

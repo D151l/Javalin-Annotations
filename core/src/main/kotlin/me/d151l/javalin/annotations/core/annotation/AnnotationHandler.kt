@@ -32,6 +32,34 @@ class AnnotationHandler {
                 it.isAccessible = true
                 methods.put(Pair(annotation.path, RequestType.GET)) { context -> it.invoke(controller, context) }
             }
+
+            if (it.isAnnotationPresent(JavalinPutPath::class.java)) {
+                val annotation = it.getAnnotation(JavalinPutPath::class.java)
+
+                it.isAccessible = true
+                methods.put(Pair(annotation.path, RequestType.PUT)) { context -> it.invoke(controller, context) }
+            }
+
+            if (it.isAnnotationPresent(JavalinDeletePath::class.java)) {
+                val annotation = it.getAnnotation(JavalinDeletePath::class.java)
+
+                it.isAccessible = true
+                methods.put(Pair(annotation.path, RequestType.DELETE)) { context -> it.invoke(controller, context) }
+            }
+
+            if (it.isAnnotationPresent(JavalinPatchPath::class.java)) {
+                val annotation = it.getAnnotation(JavalinPatchPath::class.java)
+
+                it.isAccessible = true
+                methods.put(Pair(annotation.path, RequestType.PATCH)) { context -> it.invoke(controller, context) }
+            }
+
+            if (it.isAnnotationPresent(JavalinGetPath::class.java)) {
+                val annotation = it.getAnnotation(JavalinGetPath::class.java)
+
+                it.isAccessible = true
+                methods.put(Pair(annotation.path, RequestType.GET)) { context -> it.invoke(controller, context) }
+            }
         }
 
         return methods
