@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.D151l:Javalin-Annotations:868f9de2e3")
+    implementation("com.github.D151l:Javalin-Annotations:38a0171ba3")
 }
 ```
 
@@ -33,7 +33,7 @@ pom.xml:
         <dependency>
             <groupId>com.github.D151l</groupId>
             <artifactId>Javalin-Annotations</artifactId>
-            <version>868f9de2e3</version>
+            <version>38a0171ba3</version>
         </dependency>
     </dependencies>
 ```
