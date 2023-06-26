@@ -46,11 +46,6 @@ class JavalinAnnotations(
                     consumer.accept(it)
                 }
             }
-            if (pair.second == RequestType.GET) {
-                this.app.get(pair.first) {
-                    consumer.accept(it)
-                }
-            }
         }
     }
 }
